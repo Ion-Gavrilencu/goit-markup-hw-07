@@ -29,68 +29,83 @@ ul {
 a {
     text-decoration: none;
 }      
-.global-header{
-    background-color:var(--white-color);
+.global-header {
+    background-color: var(--white-color);
     display: flex;
+    height: 72px;
     justify-content: space-around;
     align-items: center;
-    height: 72px;
+    border-bottom: 1px solid var(--cornflower-color);
+   
 }
 
-.global-header .logo::before{
+.global-header .logo::before {
     content: "WEB";
-    color:var(--iris-color);
+    color: var(--iris-color);
     font-weight: 800;
     font-size: 18px;
     line-height: 1.3em;
     font-family: var(--second-family);
 }
-.global-header .logo{
+
+.logo{
+    position: absolute;
+    left: 16px;
+}
+.global-header .logo {
     font-weight: 800;
     font-size: 18px;
     line-height: 1.3em;
     font-family: var(--second-family);
     text-transform: uppercase;
-    color:var(--navy-blue-color)
-}
-.main-nav-ul{
-    display: flex;
-    width: 500px;
-    padding-inline-start: 0;
-    justify-content:flex-start;
-    gap: 40px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    align-items: center;
-    height: 72px;
+    text-decoration: none;
+    color: var(--navy-blue-color)
 }
 
+.main-nav-ul {
+    display: none;
+    
+}
 
-.global-header .main-nav a{
+.global-header .main-nav a {
     text-transform: uppercase;
     font-weight: 500;
     font-size: 16px;
-    line-height: 1.5em; 
-    color: var(--navy-blue-color); 
+    line-height: 1.5em;
+    color: var(--navy-blue-color);
 }
+
 .global-header a.active {
     padding-bottom: 22px;
     border-bottom: 4px solid var(--iris-color);
     border-radius: 2px;
     color: var(--iris-color);
-
 }
+
 .global-header .main-nav a:hover,
-.global-header .social-div a:hover{
+.global-header .social-div a:hover {
     color: var(--iris-color);
     transition: var(--transition);
+
 }
-.global-header .social-div a{
+
+.social-div{
+    display: none;
+}
+
+.global-header .social-div a {
     padding-left: 40px;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5em;
     color: var(--slate-color);
+}
+.burger-menu{
+    position: absolute;
+    right: 16px;
+    fill:var(--navy-blue-color);
+    height: 22px;
+    width: 32px;
 }
 
 .first-section{
@@ -152,13 +167,7 @@ a {
     width: 264px;
 }
 .icons-second-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 4px;
-    width: 264px;
-    height: 112px;
-    background-color: var(--cloud-color);
+    display: none;
 }
 
 
@@ -171,6 +180,7 @@ a {
     gap: 24px;
     padding-inline-start: 0px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .second-section h3{
     font-weight: 500;
@@ -193,6 +203,7 @@ a {
     padding-inline-start: 0;
     gap: 24px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 .third-section h2,
 .fourth-section h2,
@@ -207,7 +218,6 @@ a {
 }
 .fourth-section{
     background-color: var(--cloud-color);
-    height: 732px;
 }
 .icons-fourth-section{
     display: flex;
@@ -259,23 +269,23 @@ a {
     padding-inline-start: 0;
     justify-content: center;
     padding-top: 72px;
+    padding-bottom: 72px;
     gap: 24px;
+    flex-wrap: wrap;
 }
 .fourth-section li{
     height: 428px;
     background-color: var(--white-color);
     display: flex;
     flex-direction: column;
-    border-radius: 0px, 0px, 4px, 4px;
+    border-radius: 0 0 4px 4px;
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 
     0 1px 1px 0 rgba(46, 47, 66, 0.16),
     0 1px 6px 0 rgba(46, 47, 66, 0.08);
 
 }
-.fifth-section{
-    height: 300px;
-        
-}
+
+    
 .icons-fifth-section{
     display: flex;
     justify-content: center;
@@ -286,6 +296,8 @@ a {
     padding-inline-start: 0;
     gap: 24px;
     justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
 }
 .icons-fifth-section li{
     border: 1px solid var(--light-slate-color);
@@ -456,7 +468,20 @@ a {
     border: 2px solid var(--light-slate-color);
     border-radius:2px;
 }
+
+.checkbox-paragraph{
+    font-family: var(--fond-family);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 117%;
+    letter-spacing: 0.04em;
+    color: var(--light-slate-color)
+}
  
+.checkbox-container{
+    display: flex;
+}
+
 .input-name,
 .input-phone,
 .input-email{
@@ -677,7 +702,90 @@ textarea::placeholder{
 
 .input-container svg{
     position: absolute;
+    margin-top: 8px;
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
+}
+
+
+
+/* Media query pentru ecrane între 768px și 1158px */
+
+@media screen and (min-width: 768px){
+    .main-nav-ul {
+        display: flex;
+        padding-inline-start: 0;
+        justify-content: flex-start;
+        gap: 40px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        align-items: center;
+        height: 72px;
+    }
+    
+    .global-header .social-div a {
+        padding-left: 40px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5em;
+        color: var(--slate-color);
+
+    }
+    .logo{
+        position: relative;
+    }
+
+    .social-div{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .burger-menu{
+        display: none;
+    }
+
+    .icons-second-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            width: 264px;
+            height: 112px;
+            background-color: var(--cloud-color);
+    
+
+}
+
+/* Media query pentru ecrane mai mari de 1158px */
+
+@media screen and (min-width: 1158px) {
+    .main-nav-ul {
+        display: flex;
+        width: 500px;
+        padding-inline-start: 0;
+        justify-content: flex-start;
+        gap: 40px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        align-items: center;
+        height: 72px;
+    }
+
+    .global-header .social-div a {
+            padding-left: 40px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.5em;
+            color: var(--slate-color);
+    
+        }
+
+    .social-div{
+        display: block;
+    }
+
+    .burger-menu{
+        display: none;
+    }
 }
