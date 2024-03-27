@@ -721,9 +721,112 @@ textarea::placeholder{
     left: 10px;
     transform: translateY(-50%);
 }
+.js-menu-container{
+    display: none;
+}
+.js-menu-container.is-open{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top:0;
+    right: 0;
+    background-color:var(--white-color) ;
+    z-index: 1;
+    padding:40px;
+    height: 100%;
+    width: 100%;
+}
+.js-close-menu{
+    border: none;
+    background: none;
+    align-self: self-end;
+
+}
+
+.icons-mobail-link {
+    display: flex;
+    justify-content:space-between;
+    gap: 56px;
+}
+.mobail-nav{
+    padding-bottom: 210px;
+}
+.mobail-nav-ul{
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 111%;
+    letter-spacing: 0.02em;
+    text-transform: capitalize;
+    color: var(--navy-blue-color);
+    padding-inline-start: 0px;
+}
+
+.icons-mobail-link .icon svg {
+    width: 16px;
+    height: 16px;
+
+}
+
+.icons-mobail-link .icon {
+    width: 40px;
+    height: 40px;
+    background-color: var(--iris-color);
+    color: var(--cloud-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icons-mobail-link .icon:hover {
+    background-color: var(--cloud-color);
+    color: var(--iris-color);
+    transition: var(--transition);
+}
+ .mobail-nav a {
+    line-height: 1.5em;
+    color: var(--navy-blue-color);
+}
+
+.mobail-nav a.active {
+    padding-bottom: 22px;
+    color: var(--iris-color);
+}
+
+ .mobail-nav a:hover,
+ .mobail-social-div a:hover {
+    color: var(--iris-color);
+    transition: var(--transition);
 
 
-
+}
+.mobail-social-div{
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 40px;
+    padding-bottom: 48px;
+}
+.mobail-social-div-tel{
+    font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 111%;
+        letter-spacing: 0.02em;
+        text-transform: capitalize;
+        color: var(--iris-color);
+}
+.mobail-social-div-mailto{
+    font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 120%;
+        letter-spacing: 0.02em;
+        color: var(--slate-color);
+}
 /* Media query pentru ecrane între 768px și 1158px */
 
 @media screen and (min-width: 768px){
